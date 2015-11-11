@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2015-07-21T21:06:47Z</created><keywords></keywords><modified>2015-07-21T21:06:47Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <library_images>
+    <image id="file2-image" name="file2"><init_from>file://C:/Users/thuang/virtualdoppleganger/objects/tile.jpg</init_from></image>
+  </library_images>
+  <library_materials>
+    <material id="lambert3" name="lambert3">
+      <instance_effect url="#lambert3-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert3-fx" name="lambert3">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000  0.000000 0.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pPlane2-lib" name="pPlane2Mesh">
+      <mesh>
+        <source id="pPlane2-POSITION">
+          <float_array id="pPlane2-POSITION-array" count="12">
+-40.161575 -0.000000 38.979744
+37.438431 -0.000000 38.979744
+-40.161575 0.000000 -41.020256
+37.438431 0.000000 -41.020256
+</float_array>
+          <technique_common>
+            <accessor source="#pPlane2-POSITION-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlane2-Normal0">
+          <float_array id="pPlane2-Normal0-array" count="12">
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPlane2-Normal0-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlane2-UV0">
+          <float_array id="pPlane2-UV0-array" count="8">
+-1.885756 -1.885756
+2.885756 -1.885756
+-1.885756 2.885756
+2.885756 2.885756
+</float_array>
+          <technique_common>
+            <accessor source="#pPlane2-UV0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPlane2-VERTEX">
+          <input semantic="POSITION" source="#pPlane2-POSITION"/>
+          <input semantic="NORMAL" source="#pPlane2-Normal0"/>
+        </vertices>
+        <triangles count="2" material="lambert3"><input semantic="VERTEX" offset="0" source="#pPlane2-VERTEX"/><input semantic="TEXCOORD" offset="1" set="0" source="#pPlane2-UV0"/><p> 1 1 3 3 0 0 0 0 3 3 2 2</p></triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="tile" name="tile">
+      <node name="pPlane2" id="pPlane2" sid="pPlane2"><matrix sid="matrix">1.086748 0.000000 0.000000 0.118113 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pPlane2-lib"><bind_material><technique_common><instance_material symbol="lambert3" target="#lambert3"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <extra><technique profile="MAX3D"><frame_rate>24.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.041667</start_time><end_time>2.000000</end_time></technique></extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#tile"></instance_visual_scene>
+  </scene>
+</COLLADA>
