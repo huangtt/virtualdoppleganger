@@ -6,6 +6,6 @@ While being serenaded to some beautiful and funky gameplay music, the player can
 
 See gameplay here: https://www.youtube.com/watch?v=wc7zz0FLqyk
 
-See most significant code in files:
-trackingcamera.py
+See my most significant code in files:
+trackingcamera.py and
 tutorialcamera.py
